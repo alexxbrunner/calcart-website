@@ -1,3 +1,40 @@
+# Calcart Website
+
+A modern landing page for Calcart - Your personalized nutrition assistant that helps achieve your diet goals by providing meal plans, grocery lists, and budget-friendly recipes.
+
+## Features
+
+- Personalized meal planning
+- Weight tracking
+- Budget-friendly shopping
+- Recipe recommendations
+- Direct supermarket ordering
+- Coming in Q3 2025: Sport Communities
+
+## Launch Cities
+
+- Vienna (Austria)
+- Munich (Germany)
+- Zurich (Switzerland)
+- Berlin (Germany)
+- Cologne (Germany)
+- Frankfurt (Germany)
+- Hamburg (Germany)
+
+## Development
+
+This project was built with React and styled using Tailwind CSS with animations powered by Framer Motion.
+
+## Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm start
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
