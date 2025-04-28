@@ -70,7 +70,7 @@ const AndroidIcon = () => (
 );
 
 // Remove ThreeDModel component
-const PHONE_MOCKUP = 'phone.png';
+const PHONE_MOCKUP = 'phone2.png';
 
 const SignUpPage = () => {
   const [email, setEmail] = useState('');
