@@ -98,35 +98,35 @@ const SignUpPage = () => {
       id: 1,
       title: "Persönliche Mahlzeitenplanung",
       icon: "🍲",
-      description: "Erhalten Sie maßgeschneiderte Speisepläne basierend auf Ihren Ernährungsvorlieben, Gesundheitszielen und Budgetvorgaben. Wir erstellen Pläne, die zu Ihnen passen.",
+      description: "Erhalte maßgeschneiderte Speisepläne basierend auf deinen Ernährungsvorlieben, Gesundheitszielen und Budget. Wir erstellen Pläne, die perfekt zu dir passen.",
       color: "from-green-400 to-emerald-500"
     },
     {
       id: 2,
       title: "Gewichtsverfolgung",
       icon: "⚖️",
-      description: "Verfolgen Sie Ihre Fortschritte mit unseren intelligenten Tracking-Tools. Setzen Sie realistische Ziele und sehen Sie Ihre Erfolge durch personalisierte Diagramme und Analysen.",
+      description: "Verfolge deine Fortschritte mit unseren intelligenten Tracking-Tools. Setze realistische Ziele und sieh deine Erfolge durch personalisierte Diagramme und Analysen.",
       color: "from-sky-400 to-blue-500"
     },
     {
       id: 3,
       title: "Budgetfreundliches Einkaufen",
       icon: "🛒",
-      description: "Sparen Sie Geld mit intelligenten Einkaufslisten, die Ihnen helfen, Zutaten zu kaufen, die in Ihr Budget passen und gleichzeitig Nährwert und Geschmack maximieren.",
+      description: "Spare Geld mit intelligenten Einkaufslisten, die dir helfen, Zutaten zu kaufen, die in dein Budget passen und gleichzeitig Nährwert und Geschmack maximieren.",
       color: "from-blue-400 to-indigo-500"
     },
     {
       id: 4,
       title: "Rezeptempfehlungen",
       icon: "📝",
-      description: "Entdecken Sie köstliche Rezepte, die auf Ihre Geschmacksvorlieben, Ernährungsbedürfnisse und Kochfähigkeiten zugeschnitten sind, mit Optionen für alle Lebensstile.",
+      description: "Entdecke köstliche Rezepte, die auf deine Geschmacksvorlieben, Ernährungsbedürfnisse und Kochfähigkeiten zugeschnitten sind, mit Optionen für alle Lebensstile.",
       color: "from-amber-400 to-orange-500"
     },
     {
       id: 5,
       title: "Direkte Supermarktbestellung",
       icon: "🚚",
-      description: "Bestellen Sie alle Rezeptzutaten direkt von Ihren bevorzugten Supermärkten in der Nähe. Keine Lust zu kochen? Bestellen Sie einfach von lokalen Restaurants mit einem Klick.",
+      description: "Bestelle alle Rezeptzutaten direkt von deinen bevorzugten Supermärkten in der Nähe. Keine Lust zu kochen? Bestell dir einfach von lokalen Restaurants mit einem Klick.",
       color: "from-purple-400 to-indigo-500"
     }
   ];
@@ -237,10 +237,10 @@ const SignUpPage = () => {
             transition={{ duration: 0.5 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
-             Abnehmen? Planung und Einkaufen <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">sollten nicht im Weg stehen</span>
+             Abnehmen? Planung und Einkaufen <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">sollten dir nicht im Weg stehen</span>
             </h1>
             <p className="text-gray-600 mt-4 mb-6 text-base max-w-xl leading-relaxed">
-              Wir wissen alle, dass Planung und Einkaufen das Schlimmste an gesunder Ernährung sind. Calcart nimmt Ihnen diese Last ab und macht gesundes Essen einfach, praktisch und budgetfreundlich.
+              Wir wissen alle, dass Planung und Einkaufen das Schlimmste an gesunder Ernährung sind. Calcart nimmt dir diese Last ab und macht gesundes Essen einfach, praktisch und budgetfreundlich. Versprochen!
             </p>
             
             {/* CTA Form with micro-interactions */}
@@ -256,7 +256,7 @@ const SignUpPage = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Ihre E-Mail-Adresse"
+                  placeholder="Deine E-Mail-Adresse"
                   className="w-full px-4 py-2 text-sm rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-calcart-green focus:border-transparent transition-colors bg-white/80 backdrop-blur-sm"
                   required
                   aria-label="E-Mail-Adresse"
@@ -276,7 +276,7 @@ const SignUpPage = () => {
             
             {/* Privacy consent */}
             <p className="text-gray-500 text-xs mb-5 max-w-lg">
-              Mit Ihrer Anmeldung stimmen Sie unseren <a href="#" className="text-calcart-green underline">Datenschutzbestimmungen</a> und <a href="#" className="text-calcart-green underline">Nutzungsbedingungen</a> zu. Wir versenden nur relevante Informationen und Sie können sich jederzeit abmelden.
+              Mit deiner Anmeldung stimmst du unseren <a href="#" className="text-calcart-green underline">Datenschutzbestimmungen</a> und <a href="#" className="text-calcart-green underline">Nutzungsbedingungen</a> zu. Wir versenden nur relevante Infos und du kannst dich jederzeit abmelden.
             </p>
 
             {/* USP Banner - Moved below email input */}
@@ -290,7 +290,7 @@ const SignUpPage = () => {
                 <div className="text-xl mt-0.5">🚚</div>
                 <div>
                   <h3 className="text-gray-900 text-sm font-medium mb-1">Direkt vom Supermarkt bestellen</h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">Alle Rezepte können über Ihre bevorzugten Supermärkte in der Nähe bestellt werden. Keine Lust zu kochen? Bestellen Sie einfach fertige Mahlzeiten von lokalen Restaurants mit einem Klick.</p>
+                  <p className="text-gray-600 text-xs leading-relaxed">Alle Rezepte kannst du über deine bevorzugten Supermärkte in der Nähe bestellen. Keine Lust zu kochen? Bestell dir einfach fertige Mahlzeiten von lokalen Restaurants mit einem Klick.</p>
                 </div>
               </div>
             </motion.div>
@@ -357,7 +357,7 @@ const SignUpPage = () => {
               Bald verfügbar in diesen Städten
             </h2>
             <p className="text-gray-600 text-sm max-w-2xl mx-auto">
-              Werden Sie Teil der Calcart-Gemeinschaft. Melden Sie sich jetzt an, um als Erster über unseren Start in Ihrer Stadt informiert zu werden.
+              Werde Teil der Calcart-Gemeinschaft. Melde dich jetzt an, um als Erste*r über unseren Start in deiner Stadt informiert zu werden.
             </p>
           </motion.div>
 
@@ -435,7 +435,7 @@ const SignUpPage = () => {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Leistungsstarke</span> Funktionen
             </h2>
             <p className="text-gray-600 text-base max-w-2xl mx-auto">
-              Entdecken Sie, wie Calcart Ihre Beziehung zu Lebensmitteln und Ernährung mit diesen innovativen Funktionen verbessert.
+              Entdecke, wie Calcart deine Beziehung zu Lebensmitteln und Ernährung mit diesen innovativen Funktionen verbessert.
             </p>
           </motion.div>
           
@@ -459,7 +459,11 @@ const SignUpPage = () => {
                     <h3 className="text-base font-medium text-gray-900">{card.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {card.description}
+                    {card.id === 1 ? "Erhalte maßgeschneiderte Speisepläne basierend auf deinen Ernährungsvorlieben, Gesundheitszielen und Budget. Wir erstellen Pläne, die perfekt zu dir passen." : 
+                     card.id === 2 ? "Verfolge deine Fortschritte mit unseren intelligenten Tracking-Tools. Setze realistische Ziele und sieh deine Erfolge durch personalisierte Diagramme und Analysen." :
+                     card.id === 3 ? "Spare Geld mit intelligenten Einkaufslisten, die dir helfen, Zutaten zu kaufen, die in dein Budget passen und gleichzeitig Nährwert und Geschmack maximieren." :
+                     card.id === 4 ? "Entdecke köstliche Rezepte, die auf deine Geschmacksvorlieben, Ernährungsbedürfnisse und Kochfähigkeiten zugeschnitten sind, mit Optionen für alle Lebensstile." :
+                     "Bestelle alle Rezeptzutaten direkt von deinen bevorzugten Supermärkten in der Nähe. Keine Lust zu kochen? Bestell dir einfach von lokalen Restaurants mit einem Klick."}
                   </p>
                   <motion.a 
                     href="#" 
@@ -493,7 +497,7 @@ const SignUpPage = () => {
                     <span className="text-xs font-medium bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Q3 2025</span>
                   </div>
                   <p className="text-gray-600 text-sm mb-3">
-                    Ab dem dritten Quartal 2025 werden wir Sport-Communities einführen. Verbinden Sie sich mit Gleichgesinnten, nehmen Sie an Herausforderungen teil und teilen Sie Ihre Erfolge. Trainieren Sie gemeinsam, motivieren Sie sich gegenseitig und erreichen Sie Ihre Fitnessziele in einer unterstützenden Gemeinschaft.
+                    Ab dem dritten Quartal 2025 führen wir Sport-Communities ein. Verbinde dich mit Gleichgesinnten, nimm an Challenges teil und teile deine Erfolge. Trainiere gemeinsam, motiviert euch gegenseitig und erreicht eure Fitnessziele in einer unterstützenden Community. Du schaffst das!
                   </p>
                   <motion.button
                     className="inline-flex items-center text-sm text-blue-600 font-medium"
@@ -556,16 +560,16 @@ const SignUpPage = () => {
                 
                 <div className="text-center md:text-left">
                   <p className="text-gray-700 text-base md:text-lg font-medium mb-4 leading-relaxed">
-                    Wir sind ein kleines Team, aber mit einer Mission: Allen Menschen die Möglichkeit zu geben, einen persönlichen Ernährungsberater zu haben.
+                    Wir sind ein kleines Team mit einer großen Mission: Dir deinen persönlichen Ernährungsberater zu geben - weil wir wissen, wie schwer es sein kann.
                   </p>
                   
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    In einer Welt voller Diättrends und widersprüchlicher Ernährungsratschläge wollen wir Klarheit und Personalisierung bieten. Mit Calcart steht jedem eine maßgeschneiderte Ernährungsberatung zur Verfügung – direkt in der Tasche, rund um die Uhr. Wir nutzen Technologie nicht nur, um Informationen zu liefern, sondern um echte, alltagstaugliche Lösungen zu schaffen, die zu Ihrem Leben passen.
+                    In einer Welt voller Diättrends und widersprüchlicher Ernährungsratschläge wollen wir dir Klarheit und Personalisierung bieten. Mit Calcart hast du eine maßgeschneiderte Ernährungsberatung – direkt in deiner Tasche, rund um die Uhr. Wir nutzen Technologie nicht nur, um Infos zu liefern, sondern um echte, alltagstaugliche Lösungen zu schaffen, die zu deinem Leben passen.
                   </p>
                   
                   <div className="bg-emerald-50 border-l-4 border-calcart-green p-4 rounded-r-md">
                     <p className="text-gray-800 text-sm font-medium italic">
-                      Es gibt jetzt keine Ausreden mehr. Gesunde Ernährung war noch nie so einfach, zugänglich und auf Ihre Bedürfnisse zugeschnitten.
+                      Es gibt jetzt keine Ausreden mehr. Gesunde Ernährung war noch nie so einfach, zugänglich und auf deine Bedürfnisse zugeschnitten. Wir helfen dir dabei!
                     </p>
                   </div>
                   
