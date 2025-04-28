@@ -147,7 +147,7 @@ const SignUpPage = () => {
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
           >
-            <div className="bg-gradient-to-br from-calcart-green to-emerald-400 rounded-full w-9 h-9 flex items-center justify-center mr-2 shadow-lg">
+            <div className="bg-gradient-to-br from-calcart-green to-emerald-400 rounded-xl w-9 h-9 flex items-center justify-center mr-2 shadow-lg">
               <span className="text-white text-lg font-bold">C</span>
             </div>
             <span className="text-gray-900 text-lg font-medium">Calcart</span>
