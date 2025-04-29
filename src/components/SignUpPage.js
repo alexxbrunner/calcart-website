@@ -79,6 +79,7 @@ const SignUpPage = () => {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showExistsModal, setShowExistsModal] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Add scroll listener
@@ -89,6 +90,18 @@ const SignUpPage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Function to close mobile menu when clicking on a link
+  const handleMobileNavClick = (sectionId) => {
+    setMobileMenuOpen(false);
+    // Scroll to section if ID provided
+    if (sectionId) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -278,9 +291,88 @@ const SignUpPage = () => {
       {/* Already Exists Modal */}
       {showExistsModal && <ExistsModal />}
 
+      {/* Mobile Menu Overlay */}
+      <motion.div 
+        className={`fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: mobileMenuOpen ? 1 : 0 }}
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        <motion.div 
+          className="bg-white h-full w-4/5 max-w-xs p-6 shadow-xl"
+          initial={{ x: -300 }}
+          animate={{ x: mobileMenuOpen ? 0 : -300 }}
+          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center">
+              <div className="bg-gradient-to-br from-calcart-green to-emerald-400 rounded-xl w-9 h-9 flex items-center justify-center mr-2 shadow-lg">
+                <span className="text-white text-lg font-bold">C</span>
+              </div>
+              <span className="text-gray-900 text-lg font-medium">Calcart</span>
+            </div>
+            <button 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-gray-400 hover:text-gray-600"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          
+          <nav className="flex flex-col space-y-4">
+            <a 
+              href="#" 
+              onClick={() => handleMobileNavClick()} 
+              className="text-gray-900 font-medium py-2 border-b border-gray-100"
+            >
+              Startseite
+            </a>
+            <a 
+              href="#features"
+              onClick={() => handleMobileNavClick('features')} 
+              className="text-gray-900 font-medium py-2 border-b border-gray-100"
+            >
+              Funktionen
+            </a>
+            <a 
+              href="#" 
+              onClick={() => handleMobileNavClick()} 
+              className="text-gray-900 font-medium py-2 border-b border-gray-100"
+            >
+              Städte
+            </a>
+            <a 
+              href="#about" 
+              onClick={() => handleMobileNavClick('about')} 
+              className="text-gray-900 font-medium py-2 border-b border-gray-100"
+            >
+              Über uns
+            </a>
+          </nav>
+          
+          <div className="mt-8">
+            <motion.button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                // Scroll to the signup form
+                document.querySelector('input[type="email"]').scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="w-full bg-gradient-to-r from-calcart-green to-emerald-500 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all text-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Frühzeitig anmelden
+            </motion.button>
+          </div>
+        </motion.div>
+      </motion.div>
+
       {/* Navigation - Glass morphism style */}
       <motion.nav 
-        className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 
+        className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 
           "bg-white/80 backdrop-blur-lg shadow-md py-3" : 
           "bg-transparent py-5"}`}
         initial={{ y: -100 }}
@@ -339,7 +431,7 @@ const SignUpPage = () => {
               />
             </motion.a>
             <motion.a 
-              href="#" 
+              href="#about" 
               className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative"
               whileHover={{ scale: 1.05 }}
             >
@@ -363,8 +455,11 @@ const SignUpPage = () => {
           </motion.a>
 
           {/* Mobile menu button */}
-          <button className="md:hidden text-gray-900 focus:outline-none">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-5 w-5">
+          <button 
+            className="md:hidden text-gray-900 focus:outline-none"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-6 w-6">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
@@ -624,13 +719,6 @@ const SignUpPage = () => {
                      card.id === 4 ? "Entdecke köstliche Rezepte, die auf deine Geschmacksvorlieben, Ernährungsbedürfnisse und Kochfähigkeiten zugeschnitten sind, mit Optionen für alle Lebensstile." :
                      "Bestelle alle Rezeptzutaten direkt von deinen bevorzugten Supermärkten in der Nähe. Keine Lust zu kochen? Bestell dir einfach von lokalen Restaurants mit einem Klick."}
                   </p>
-                  <motion.a 
-                    href="#" 
-                    className="text-calcart-green text-sm font-medium flex items-center group-hover:underline"
-                    whileHover={{ x: 5 }}
-                  >
-                    Mehr erfahren <ArrowIcon />
-                  </motion.a>
                 </div>
               </motion.div>
             ))}
@@ -730,6 +818,30 @@ const SignUpPage = () => {
                     <p className="text-gray-800 text-sm font-medium italic">
                       Es gibt jetzt keine Ausreden mehr. Gesunde Ernährung war noch nie so einfach, zugänglich und auf deine Bedürfnisse zugeschnitten. Wir helfen dir dabei!
                     </p>
+                  </div>
+                  
+                  <div className="mt-10 mb-6 space-y-6">
+                    <div className="flex flex-col items-center md:flex-row md:items-start gap-5">
+                      <div className="relative w-24 h-24 overflow-hidden rounded-full border-2 border-calcart-green shadow-md flex-shrink-0">
+                        <img 
+                          src={process.env.PUBLIC_URL + '/img/team/Alex.jpg'} 
+                          alt="Alexander Brunner - Gründer von Calcart" 
+                          className="absolute w-full h-full object-cover object-center"
+                          onError={(e) => {
+                            e.target.onerror = null; 
+                            e.target.src = 'https://via.placeholder.com/150?text=AB';
+                          }}
+                        />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">Alexander Brunner</h3>
+                        <p className="text-calcart-green font-medium text-sm mb-2">Gründer & CEO</p>
+                        <p className="text-gray-600 text-sm">
+                          Alex hat Calcart mit dem Ziel gegründet, die komplexe Welt der Ernährung für jeden zugänglich zu machen. 
+                          Mit einem Hintergrund in Technologie und einer Leidenschaft für gesunde Ernährung, leitet er die Vision von Calcart.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                   
                   <div className="mt-8 flex justify-center md:justify-start gap-4">
