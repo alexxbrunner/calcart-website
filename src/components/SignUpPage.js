@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 // SVG Icons with improved accessibility
 const ArrowIcon = () => (
-  <motion.svg 
+  <svg 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 20 20" 
     fill="currentColor" 
     className="w-5 h-5 ml-1"
-    whileHover={{ x: 3 }}
-    transition={{ type: "spring", stiffness: 400 }}
     aria-hidden="true"
   >
     <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-  </motion.svg>
+  </svg>
 );
 
 const PhoneIcon = () => (
@@ -24,49 +21,44 @@ const PhoneIcon = () => (
 );
 
 const StarIcon = () => (
-  <motion.svg 
+  <svg 
     xmlns="http://www.w3.org/2000/svg" 
     viewBox="0 0 24 24" 
     fill="currentColor" 
     className="w-5 h-5"
-    initial={{ rotate: 0 }}
-    animate={{ rotate: 360 }}
-    transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
     aria-hidden="true"
   >
     <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-  </motion.svg>
+  </svg>
 );
 
 const AppleIcon = () => (
-  <motion.svg 
+  <svg 
     xmlns="http://www.w3.org/2000/svg" 
     width="20" 
     height="20" 
     viewBox="0 0 24 24" 
     fill="currentColor" 
-    className="mr-2"
-    whileHover={{ scale: 1.1 }}
+    className="mr-2 hover:scale-110 transition-transform"
     aria-hidden="true"
   >
     <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83z"></path>
     <path d="M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"></path>
-  </motion.svg>
+  </svg>
 );
 
 const AndroidIcon = () => (
-  <motion.svg 
+  <svg 
     xmlns="http://www.w3.org/2000/svg" 
     width="20" 
     height="20" 
     viewBox="0 0 24 24" 
     fill="currentColor" 
-    className="mr-2"
-    whileHover={{ scale: 1.1 }}
+    className="mr-2 hover:scale-110 transition-transform"
     aria-hidden="true"
   >
     <path d="M6 18c0 .55.45 1 1 1h1v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h2v3.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5V19h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zm-4.97-5.84l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z"></path>
-  </motion.svg>
+  </svg>
 );
 
 // Remove ThreeDModel component
@@ -161,18 +153,12 @@ const SignUpPage = () => {
 
   // Modal for already existing email
   const ExistsModal = () => (
-    <motion.div
+    <div
       className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
       onClick={() => setShowExistsModal(false)}
     >
-      <motion.div 
+      <div 
         className="bg-white rounded-lg p-6 max-w-md w-full shadow-xl"
-        initial={{ scale: 0.9, y: 20 }}
-        animate={{ scale: 1, y: 0 }}
-        exit={{ scale: 0.9, y: 20 }}
         onClick={e => e.stopPropagation()} // Prevent closing when clicking inside
       >
         <div className="flex items-start justify-between mb-4">
@@ -205,17 +191,15 @@ const SignUpPage = () => {
         </div>
         
         <div className="flex justify-end">
-          <motion.button
+          <button
             onClick={() => setShowExistsModal(false)}
-            className="bg-gradient-to-r from-calcart-green to-emerald-500 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg font-medium"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="bg-gradient-to-r from-calcart-green to-emerald-500 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg font-medium hover:scale-105 active:scale-95 transition-transform"
           >
             Alles klar
-          </motion.button>
+          </button>
         </div>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 
   const featureCards = [
@@ -260,11 +244,8 @@ const SignUpPage = () => {
     <div className="min-h-screen bg-gradient-to-br from-white to-green-50">
       {/* Success Popup */}
       {showSuccessPopup && (
-        <motion.div 
+        <div 
           className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg rounded-lg p-4 max-w-md w-[90%] border-l-4 border-calcart-green"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -50 }}
         >
           <div className="flex flex-col sm:flex-row items-start">
             <div className="bg-green-100 rounded-full p-2 mb-2 sm:mb-0 sm:mr-3">
@@ -286,24 +267,20 @@ const SignUpPage = () => {
               </svg>
             </button>
           </div>
-        </motion.div>
+        </div>
       )}
 
       {/* Already Exists Modal */}
       {showExistsModal && <ExistsModal />}
 
       {/* Mobile Menu Overlay */}
-      <motion.div 
+      <div 
         className={`fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: mobileMenuOpen ? 1 : 0 }}
         onClick={() => setMobileMenuOpen(false)}
       >
-        <motion.div 
-          className="bg-white h-full w-4/5 max-w-xs p-6 shadow-xl"
-          initial={{ x: -300 }}
-          animate={{ x: mobileMenuOpen ? 0 : -300 }}
-          transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        <div 
+          className="bg-white h-full w-4/5 max-w-xs p-6 shadow-xl transform transition-transform duration-300 ease-in-out"
+          style={{ transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(-100%)' }}
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex justify-between items-center mb-8">
@@ -355,105 +332,81 @@ const SignUpPage = () => {
           </nav>
           
           <div className="mt-8">
-            <motion.button
+            <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 // Scroll to the signup form
                 document.querySelector('input[type="email"]').scrollIntoView({ behavior: 'smooth' });
               }}
-              className="w-full bg-gradient-to-r from-calcart-green to-emerald-500 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all text-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-full bg-gradient-to-r from-calcart-green to-emerald-500 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all text-center hover:scale-105 active:scale-95"
             >
               Frühzeitig anmelden
-            </motion.button>
+            </button>
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
       {/* Navigation - Glass morphism style */}
-      <motion.nav 
+      <nav 
         className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 
           "bg-white/80 backdrop-blur-lg shadow-md py-3" : 
           "bg-transparent py-5"}`}
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 100 }}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <motion.div 
-            className="flex items-center"
-            whileHover={{ scale: 1.05 }}
+          <div 
+            className="flex items-center hover:scale-105 transition-transform"
           >
             <div className="bg-gradient-to-br from-calcart-green to-emerald-400 rounded-xl w-9 h-9 flex items-center justify-center mr-2 shadow-lg">
               <span className="text-white text-lg font-bold">C</span>
             </div>
             <span className="text-gray-900 text-lg font-medium">Calcart</span>
-          </motion.div>
-          
-          <div className="hidden md:flex items-center space-x-6">
-            <motion.a 
-              href="#" 
-              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative"
-              whileHover={{ scale: 1.05 }}
-            >
-              Startseite
-              <motion.span 
-                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green" 
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.a>
-            <motion.a 
-              href="#features" 
-              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative"
-              whileHover={{ scale: 1.05 }}
-            >
-              Funktionen
-              <motion.span 
-                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green" 
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.a>
-            <motion.a 
-              href="#" 
-              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative"
-              whileHover={{ scale: 1.05 }}
-            >
-              Städte
-              <motion.span 
-                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green" 
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.a>
-            <motion.a 
-              href="#about" 
-              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative"
-              whileHover={{ scale: 1.05 }}
-            >
-              Über uns
-              <motion.span 
-                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green" 
-                initial={{ width: 0 }}
-                whileHover={{ width: '100%' }}
-                transition={{ duration: 0.2 }}
-              />
-            </motion.a>
           </div>
           
-          <motion.a 
+          <div className="hidden md:flex items-center space-x-6">
+            <a 
+              href="#" 
+              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative group hover:scale-105 transition-transform"
+            >
+              Startseite
+              <span 
+                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green w-0 group-hover:w-full transition-all duration-200" 
+              />
+            </a>
+            <a 
+              href="#features" 
+              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative group hover:scale-105 transition-transform"
+            >
+              Funktionen
+              <span 
+                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green w-0 group-hover:w-full transition-all duration-200" 
+              />
+            </a>
+            <a 
+              href="#" 
+              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative group hover:scale-105 transition-transform"
+            >
+              Städte
+              <span 
+                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green w-0 group-hover:w-full transition-all duration-200" 
+              />
+            </a>
+            <a 
+              href="#about" 
+              className="text-gray-900 text-sm font-medium hover:text-calcart-green transition-colors relative group hover:scale-105 transition-transform"
+            >
+              Über uns
+              <span 
+                className="absolute -bottom-1 left-0 h-0.5 bg-calcart-green w-0 group-hover:w-full transition-all duration-200" 
+              />
+            </a>
+          </div>
+          
+          <a 
             href="#" 
-            className="hidden md:flex items-center justify-center bg-gradient-to-r from-calcart-green to-emerald-500 text-white text-sm font-medium py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="hidden md:flex items-center justify-center bg-gradient-to-r from-calcart-green to-emerald-500 text-white text-sm font-medium py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all hover:scale-105 active:scale-95"
           >
             Frühzeitig anmelden
-          </motion.a>
+          </a>
 
           {/* Mobile menu button */}
           <button 
@@ -465,7 +418,7 @@ const SignUpPage = () => {
             </svg>
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16">
@@ -572,28 +525,16 @@ const SignUpPage = () => {
       {/* Launch Cities Section */}
       <section className="py-10 bg-white/70 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            className="text-center mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2 tracking-tight">
               Bald in diesen Städten
             </h2>
             <p className="text-gray-600 text-sm max-w-2xl mx-auto">
               Werde Teil von Calcart. Melde dich an und erfahre als Erstes, wenn wir in deiner Stadt starten.
             </p>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ staggerChildren: 0.1 }}
-            viewport={{ once: true }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 mb-6">
             {[
               { city: "Wien", country: "Österreich", icon: "🇦🇹" },
               { city: "München", country: "Deutschland", icon: "🇩🇪" },
@@ -603,80 +544,50 @@ const SignUpPage = () => {
               { city: "Frankfurt", country: "Deutschland", icon: "🇩🇪" },
               { city: "Hamburg", country: "Deutschland", icon: "🇩🇪" }
             ].map((location, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="bg-white/80 rounded-md p-3 shadow-sm hover:shadow-md transition-all"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05, duration: 0.3 }}
-                whileHover={{ y: -2 }}
-                viewport={{ once: true }}
+                className="bg-white/80 rounded-md p-3 shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
               >
                 <div className="text-xl mb-1">{location.icon}</div>
                 <div className="text-sm font-medium text-gray-900">{location.city}</div>
                 <div className="text-xs text-gray-500">{location.country}</div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="flex justify-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <motion.div
-              className="inline-flex items-center gap-1 bg-white rounded-md px-3 py-2 shadow-sm border border-gray-100"
-              initial={{ scale: 0.95 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.6 }}
-              viewport={{ once: true }}
-            >
+          <div className="flex justify-center">
+            <div className="inline-flex items-center gap-1 bg-white rounded-md px-3 py-2 shadow-sm border border-gray-100">
               <span className="text-xs text-gray-600">Weitere Städte folgen in Kürze</span>
-              <span className="text-gray-400">•</span>
-              <motion.a
+              <a
                 href="#"
-                className="text-xs text-calcart-green font-medium"
-                whileHover={{ x: 2 }}
+                className="text-xs text-calcart-green font-medium hover:translate-x-1 transition-transform"
               >
-               
-              </motion.a>
-            </motion.div>
-          </motion.div>
+          
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Features Section */}
       <section id="features" className="py-16 bg-gradient-to-br from-white/80 to-green-50/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Coole</span> Funktionen
             </h2>
             <p className="text-gray-600 text-base max-w-2xl mx-auto">
               Entdecke, wie Calcart dir hilft, besser zu essen und einzukaufen.
             </p>
-          </motion.div>
+          </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featureCards.map((card) => (
-              <motion.div 
+              <div 
                 key={card.id}
-                className={`bg-white/90 backdrop-blur-md rounded-lg overflow-hidden shadow-md transition-all group hover:shadow-lg`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: card.id * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -3 }}
-                onHoverStart={() => setActiveFeature(card.id)}
-                onHoverEnd={() => setActiveFeature(null)}
+                className={`bg-white/90 backdrop-blur-md rounded-lg overflow-hidden shadow-md transition-all group hover:shadow-lg hover:-translate-y-2`}
+                onMouseEnter={() => setActiveFeature(card.id)}
+                onMouseLeave={() => setActiveFeature(null)}
               >
                 <div className={`h-1 bg-gradient-to-r ${card.color}`}></div>
                 <div className="p-4">
@@ -685,25 +596,19 @@ const SignUpPage = () => {
                     <h3 className="text-base font-medium text-gray-900">{card.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {card.id === 1 ? "Erhalte maßgeschneiderte Speisepläne basierend auf deinen Ernährungsvorlieben, Gesundheitszielen und Budget. Wir erstellen Pläne, die perfekt zu dir passen." : 
-                     card.id === 2 ? "Verfolge deine Fortschritte mit unseren intelligenten Tracking-Tools. Setze realistische Ziele und sieh deine Erfolge durch personalisierte Diagramme und Analysen." :
-                     card.id === 3 ? "Spare Geld mit intelligenten Einkaufslisten, die dir helfen, Zutaten zu kaufen, die in dein Budget passen und gleichzeitig Nährwert und Geschmack maximieren." :
-                     card.id === 4 ? "Entdecke köstliche Rezepte, die auf deine Geschmacksvorlieben, Ernährungsbedürfnisse und Kochfähigkeiten zugeschnitten sind, mit Optionen für alle Lebensstile." :
-                     "Bestelle alle Rezeptzutaten direkt von deinen bevorzugten Supermärkten in der Nähe. Keine Lust zu kochen? Bestell dir einfach von lokalen Restaurants mit einem Klick."}
+                    {card.id === 1 ? "Bekomme Speisepläne, die zu dir passen. Wir planen nach deinen Vorlieben, Zielen und Budget. Einfach und passend zu dir!" : 
+                     card.id === 2 ? "Verfolge deine Fortschritte ganz einfach. Setze realistische Ziele und sieh deine Erfolge in bunten Diagrammen." :
+                     card.id === 3 ? "Spare Geld mit smarten Einkaufslisten. Kaufe Zutaten, die in dein Budget passen und trotzdem gesund und lecker sind." :
+                     card.id === 4 ? "Finde leckere Rezepte, die zu deinem Geschmack passen. Egal ob Anfänger oder Profi in der Küche - wir haben was für dich." :
+                     "Lass alle Zutaten direkt zu dir liefern. Keine Lust zu kochen? Bestell dir fertige Mahlzeiten mit nur einem Klick."}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
           
           {/* Coming Soon - Sport Communities */}
-          <motion.div 
-            className="mt-12 mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
+          <div className="mt-12 mb-8">
             <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 border border-blue-100">
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="bg-gradient-to-br from-blue-400 to-indigo-500 w-16 h-16 rounded-lg shadow-md flex items-center justify-center shrink-0">
@@ -718,51 +623,45 @@ const SignUpPage = () => {
                   <p className="text-gray-600 text-sm mb-3">
                     Ab dem dritten Quartal 2025 führen wir Sport-Communities ein. Verbinde dich mit Gleichgesinnten, nimm an Challenges teil und teile deine Erfolge. Trainiere gemeinsam, motiviert euch gegenseitig und erreicht eure Fitnessziele in einer unterstützenden Community. Du schaffst das!
                   </p>
-                  <motion.button
-                    className="inline-flex items-center text-sm text-blue-600 font-medium"
-                    whileHover={{ x: 5 }}
+                  <button
+                    className="inline-flex items-center text-sm text-blue-600 font-medium hover:translate-x-1 transition-transform"
+                    onClick={() => {
+                      document.querySelector('input[type="email"]').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'center'
+                      });
+                      // Set focus on the email input after scrolling
+                      setTimeout(() => {
+                        const emailInput = document.querySelector('input[type="email"]');
+                        if (emailInput) emailInput.focus();
+                      }, 800);
+                    }}
                   >
                     Für frühen Zugang anmelden <ArrowIcon />
-                  </motion.button>
+                  </button>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            className="mt-10 text-right"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <motion.a 
+          <div className="mt-10 text-right">
+            <a 
               href="#" 
-              className="inline-flex items-center justify-center bg-gradient-to-r from-calcart-green/10 to-emerald-500/10 text-calcart-green text-sm font-medium py-2 px-5 rounded-md hover:bg-gradient-to-r hover:from-calcart-green/20 hover:to-emerald-500/20 transition-all group"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center justify-center bg-gradient-to-r from-calcart-green/10 to-emerald-500/10 text-calcart-green text-sm font-medium py-2 px-5 rounded-md hover:bg-gradient-to-r hover:from-calcart-green/20 hover:to-emerald-500/20 transition-all group hover:scale-105"
             >
               <span>Alle Funktionen entdecken</span>
-              <motion.span
-                initial={{ x: 0 }}
-                whileHover={{ x: 5 }}
-              >
+              <span className="ml-1 group-hover:translate-x-1 transition-transform">
                 <ArrowIcon />
-              </motion.span>
-            </motion.a>
-          </motion.div>
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* About Us Section */}
       <section id="about" className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
                 Über <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">uns</span>
@@ -816,40 +715,20 @@ const SignUpPage = () => {
                     </div>
                   </div>
                   
-                  <div className="mt-8 flex justify-center md:justify-start gap-4">
-                    <motion.a
-                      href="#" 
-                      className="text-sm text-gray-600 hover:text-calcart-green flex items-center gap-1"
-                      whileHover={{ x: 3 }}
-                    >
-                      <span>Team kennenlernen</span>
-                      <ArrowIcon />
-                    </motion.a>
-                    <span className="text-gray-300">|</span>
-                    <motion.a
-                      href="#" 
-                      className="text-sm text-gray-600 hover:text-calcart-green flex items-center gap-1"
-                      whileHover={{ x: 3 }}
-                    >
-                      <span>Jobs</span>
-                      <ArrowIcon />
-                    </motion.a>
-                  </div>
+                
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Floating action button for mobile */}
-      <motion.button
-        className="fixed bottom-4 right-4 md:hidden bg-gradient-to-r from-calcart-green to-emerald-500 text-white w-10 h-10 rounded-md shadow-md flex items-center justify-center z-50"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+      <button
+        className="fixed bottom-4 right-4 md:hidden bg-gradient-to-r from-calcart-green to-emerald-500 text-white w-10 h-10 rounded-md shadow-md flex items-center justify-center z-50 hover:scale-110 active:scale-90 transition-transform"
       >
         <PhoneIcon />
-      </motion.button>
+      </button>
     </div>
   );
 };
