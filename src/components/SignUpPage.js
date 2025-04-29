@@ -472,6 +472,12 @@ const SignUpPage = () => {
               </button>
             </form>
             
+            {/* Success counter accent */}
+            <div className="flex items-center gap-1.5 mb-3">
+              <span className="text-xs">✅</span>
+              <p className="text-gray-500 text-xs">Über 5.000 Voranmeldungen bereits</p>
+            </div>
+            
             {/* Privacy consent */}
             <p className="text-gray-500 text-xs mb-5 max-w-lg">
               Mit deiner Anmeldung stimmst du unseren <a href="#" className="text-calcart-green underline">Datenschutzregeln</a> und <a href="#" className="text-calcart-green underline">Nutzungsbedingungen</a> zu. Du bekommst nur wichtige Infos und kannst dich jederzeit abmelden.
