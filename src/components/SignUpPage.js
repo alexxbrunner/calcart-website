@@ -78,6 +78,7 @@ const SignUpPage = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showExistsModal, setShowExistsModal] = useState(false);
 
   useEffect(() => {
     // Add scroll listener
@@ -120,10 +121,17 @@ const SignUpPage = () => {
       console.log('Email submission response data:', data);
       
       if (data.success) {
-        // Clear the form regardless of message type
+        // Check if the message indicates user already exists
+        if (data.message.includes('already subscribed')) {
+          setShowExistsModal(true);
+        } else {
+          // For new signups or reactivations
+          setShowSuccessPopup(true);
+          setTimeout(() => setShowSuccessPopup(false), 5000); // Hide popup after 5 seconds
+        }
+        
+        // Clear the form in any case
         setEmail('');
-        setShowSuccessPopup(true);
-        setTimeout(() => setShowSuccessPopup(false), 5000); // Hide popup after 5 seconds
       } else {
         // Handle validation errors or other non-server errors
         alert(data.message || 'Es gab ein Problem beim Speichern deiner E-Mail. Bitte versuche es später noch einmal.');
@@ -137,6 +145,65 @@ const SignUpPage = () => {
       setIsSubmitting(false);
     });
   };
+
+  // Modal for already existing email
+  const ExistsModal = () => (
+    <motion.div
+      className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={() => setShowExistsModal(false)}
+    >
+      <motion.div 
+        className="bg-white rounded-lg p-6 max-w-md w-full shadow-xl"
+        initial={{ scale: 0.9, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 20 }}
+        onClick={e => e.stopPropagation()} // Prevent closing when clicking inside
+      >
+        <div className="flex items-start justify-between mb-4">
+          <div className="flex items-center">
+            <div className="bg-blue-100 p-2 rounded-full mr-3">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-medium text-gray-900">Bereits angemeldet</h3>
+          </div>
+          <button 
+            onClick={() => setShowExistsModal(false)}
+            className="text-gray-400 hover:text-gray-600 focus:outline-none"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        
+        <p className="text-gray-600 mb-4">
+          Diese E-Mail-Adresse ist bereits bei uns angemeldet. Du erhältst bereits alle wichtigen Updates von uns!
+        </p>
+        
+        <div className="bg-blue-50 border-l-4 border-blue-500 p-3 mb-4">
+          <p className="text-sm text-blue-700">
+            Falls du keine E-Mails von uns erhältst, überprüfe bitte deinen Spam-Ordner oder kontaktiere uns.
+          </p>
+        </div>
+        
+        <div className="flex justify-end">
+          <motion.button
+            onClick={() => setShowExistsModal(false)}
+            className="bg-gradient-to-r from-calcart-green to-emerald-500 text-white px-4 py-2 rounded-md shadow-md hover:shadow-lg font-medium"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Verstanden
+          </motion.button>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
 
   const featureCards = [
     {
@@ -181,7 +248,7 @@ const SignUpPage = () => {
       {/* Success Popup */}
       {showSuccessPopup && (
         <motion.div 
-          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg rounded-lg p-4 max-w-md w-full border-l-4 border-calcart-green"
+          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg rounded-lg p-4 max-w-md w-full border-l-4 border-calcart-green mx-4 md:mx-0"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
@@ -207,6 +274,9 @@ const SignUpPage = () => {
           </div>
         </motion.div>
       )}
+
+      {/* Already Exists Modal */}
+      {showExistsModal && <ExistsModal />}
 
       {/* Navigation - Glass morphism style */}
       <motion.nav 
@@ -302,7 +372,7 @@ const SignUpPage = () => {
       </motion.nav>
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left: Hero Text & CTA */}
           <motion.div 
@@ -311,17 +381,17 @@ const SignUpPage = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
              Abnehmen? Planung und Einkaufen <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">sollten dir nicht im Weg stehen</span>
             </h1>
             <p className="text-gray-600 mt-4 mb-6 text-base max-w-xl leading-relaxed">
               Wir wissen alle, dass Planung und Einkaufen das Schlimmste an gesunder Ernährung sind. Calcart nimmt dir diese Last ab und macht gesundes Essen einfach, praktisch und budgetfreundlich. Versprochen!
             </p>
             
-            {/* CTA Form with micro-interactions */}
+            {/* CTA Form with improved mobile responsiveness */}
             <motion.form 
               onSubmit={handleSubmit} 
-              className="flex flex-col sm:flex-row gap-3 mb-2 max-w-lg"
+              className="flex flex-col sm:flex-row gap-3 mb-2 w-full max-w-lg"
             >
               <motion.div 
                 className="flex-1 relative"
@@ -332,7 +402,7 @@ const SignUpPage = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Deine E-Mail-Adresse"
-                  className="w-full px-4 py-2 text-sm rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-calcart-green focus:border-transparent transition-colors bg-white/80 backdrop-blur-sm"
+                  className="w-full px-4 py-3 sm:py-2 text-sm rounded-md border border-gray-200 focus:outline-none focus:ring-2 focus:ring-calcart-green focus:border-transparent transition-colors bg-white/80 backdrop-blur-sm"
                   required
                   aria-label="E-Mail-Adresse"
                   disabled={isSubmitting}
@@ -341,7 +411,7 @@ const SignUpPage = () => {
               </motion.div>
               <motion.button
                 type="submit"
-                className="bg-gradient-to-r from-calcart-green to-emerald-500 text-white px-5 py-2 text-sm rounded-md font-medium shadow-md hover:shadow-lg transition-all whitespace-nowrap flex items-center justify-center"
+                className="w-full sm:w-auto bg-gradient-to-r from-calcart-green to-emerald-500 text-white px-5 py-3 sm:py-2 text-sm rounded-md font-medium shadow-md hover:shadow-lg transition-all whitespace-nowrap flex items-center justify-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 disabled={isSubmitting}
