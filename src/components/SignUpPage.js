@@ -261,24 +261,25 @@ const SignUpPage = () => {
       {/* Success Popup */}
       {showSuccessPopup && (
         <motion.div 
-          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg rounded-lg p-4 max-w-md w-full border-l-4 border-calcart-green mx-4 md:mx-0"
+          className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-white shadow-lg rounded-lg p-4 max-w-md w-[90%] border-l-4 border-calcart-green"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -50 }}
         >
-          <div className="flex items-start">
-            <div className="bg-green-100 rounded-full p-2 mr-3">
+          <div className="flex flex-col sm:flex-row items-start">
+            <div className="bg-green-100 rounded-full p-2 mb-2 sm:mb-0 sm:mr-3">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <div>
+            <div className="flex-1">
               <h3 className="text-gray-900 font-medium">Vielen Dank für deine Anmeldung!</h3>
               <p className="text-gray-600 text-sm mt-1">Wir halten dich über alle Neuigkeiten auf dem Laufenden. Du kannst dich auf deine ersten Updates freuen!</p>
             </div>
             <button 
               onClick={() => setShowSuccessPopup(false)}
-              className="text-gray-400 hover:text-gray-600 ml-auto"
+              className="ml-auto text-gray-400 hover:text-gray-600 p-1 flex-shrink-0"
+              aria-label="Schließen"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
