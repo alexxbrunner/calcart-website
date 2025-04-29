@@ -92,9 +92,10 @@ const SignUpPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    console.log('Email submitted:', email);
     
     // Post email to API endpoint
-    fetch('https://webapp-sever.vercel.app//api/calcart/email-signup', {
+    fetch('https://webapp-sever.vercel.app/api/calcart/email-signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -109,13 +110,14 @@ const SignUpPage = () => {
       })
     })
     .then(response => {
+      console.log('Response status:', response.status);
       if (!response.ok && response.status !== 400) {
-        throw new Error('Network response was not ok');
+        throw new Error(`Network response was not ok: ${response.status}`);
       }
       return response.json();
     })
     .then(data => {
-      console.log('Email submission response:', data);
+      console.log('Email submission response data:', data);
       
       if (data.success) {
         // Clear the form regardless of message type
@@ -128,7 +130,7 @@ const SignUpPage = () => {
       }
     })
     .catch(error => {
-      console.error('Failed to submit email:', error);
+      console.error('Failed to submit email - detailed error:', error);
       alert('Es gab ein Problem beim Speichern deiner E-Mail. Bitte versuche es später noch einmal.');
     })
     .finally(() => {
