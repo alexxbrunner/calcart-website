@@ -182,7 +182,7 @@ const SignUpPage = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-lg font-medium text-gray-900">Bereits angemeldet</h3>
+            <h3 className="text-lg font-medium text-gray-900">Du bist schon dabei!</h3>
           </div>
           <button 
             onClick={() => setShowExistsModal(false)}
@@ -195,12 +195,12 @@ const SignUpPage = () => {
         </div>
         
         <p className="text-gray-600 mb-4">
-          Diese E-Mail-Adresse ist bereits bei uns angemeldet. Du erhältst bereits alle wichtigen Updates von uns!
+          Diese E-Mail ist bei uns schon angemeldet. Du bekommst also schon alle wichtigen Neuigkeiten von uns!
         </p>
         
         <div className="bg-blue-50 border-l-4 border-blue-500 p-3 mb-4">
           <p className="text-sm text-blue-700">
-            Falls du keine E-Mails von uns erhältst, überprüfe bitte deinen Spam-Ordner oder kontaktiere uns.
+            Keine E-Mails von uns bekommen? Schau mal in deinem Spam-Ordner oder schreib uns.
           </p>
         </div>
         
@@ -211,7 +211,7 @@ const SignUpPage = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Verstanden
+            Alles klar
           </motion.button>
         </div>
       </motion.div>
@@ -221,37 +221,37 @@ const SignUpPage = () => {
   const featureCards = [
     {
       id: 1,
-      title: "Persönliche Mahlzeitenplanung",
+      title: "Mahlzeiten nach deinem Geschmack",
       icon: "🍲",
-      description: "Erhalte maßgeschneiderte Speisepläne basierend auf deinen Ernährungsvorlieben, Gesundheitszielen und Budget. Wir erstellen Pläne, die perfekt zu dir passen.",
+      description: "Bekomme Speisepläne, die zu dir passen. Wir planen nach deinen Vorlieben, Zielen und Budget. Einfach und passend zu dir!",
       color: "from-green-400 to-emerald-500"
     },
     {
       id: 2,
-      title: "Gewichtsverfolgung",
+      title: "Deine Gewichtsziele im Blick",
       icon: "⚖️",
-      description: "Verfolge deine Fortschritte mit unseren intelligenten Tracking-Tools. Setze realistische Ziele und sieh deine Erfolge durch personalisierte Diagramme und Analysen.",
+      description: "Verfolge deine Fortschritte ganz einfach. Setze realistische Ziele und sieh deine Erfolge in bunten Diagrammen.",
       color: "from-sky-400 to-blue-500"
     },
     {
       id: 3,
-      title: "Budgetfreundliches Einkaufen",
+      title: "Günstig einkaufen",
       icon: "🛒",
-      description: "Spare Geld mit intelligenten Einkaufslisten, die dir helfen, Zutaten zu kaufen, die in dein Budget passen und gleichzeitig Nährwert und Geschmack maximieren.",
+      description: "Spare Geld mit smarten Einkaufslisten. Kaufe Zutaten, die in dein Budget passen und trotzdem gesund und lecker sind.",
       color: "from-blue-400 to-indigo-500"
     },
     {
       id: 4,
-      title: "Rezeptempfehlungen",
+      title: "Rezepte, die zu dir passen",
       icon: "📝",
-      description: "Entdecke köstliche Rezepte, die auf deine Geschmacksvorlieben, Ernährungsbedürfnisse und Kochfähigkeiten zugeschnitten sind, mit Optionen für alle Lebensstile.",
+      description: "Finde leckere Rezepte, die zu deinem Geschmack passen. Egal ob Anfänger oder Profi in der Küche - wir haben was für dich.",
       color: "from-amber-400 to-orange-500"
     },
     {
       id: 5,
-      title: "Direkte Supermarktbestellung",
+      title: "Direkt liefern lassen",
       icon: "🚚",
-      description: "Bestelle alle Rezeptzutaten direkt von deinen bevorzugten Supermärkten in der Nähe. Keine Lust zu kochen? Bestell dir einfach von lokalen Restaurants mit einem Klick.",
+      description: "Lass alle Zutaten direkt zu dir liefern. Keine Lust zu kochen? Bestell dir fertige Mahlzeiten mit nur einem Klick.",
       color: "from-purple-400 to-indigo-500"
     }
   ];
@@ -273,8 +273,8 @@ const SignUpPage = () => {
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="text-gray-900 font-medium">Vielen Dank für deine Anmeldung!</h3>
-              <p className="text-gray-600 text-sm mt-1">Wir halten dich über alle Neuigkeiten auf dem Laufenden. Du kannst dich auf deine ersten Updates freuen!</p>
+              <h3 className="text-gray-900 font-medium">Super! Du bist dabei!</h3>
+              <p className="text-gray-600 text-sm mt-1">Wir halten dich auf dem Laufenden. Bald bekommst du die ersten Infos von uns!</p>
             </div>
             <button 
               onClick={() => setShowSuccessPopup(false)}
@@ -471,28 +471,20 @@ const SignUpPage = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 sm:pt-32 pb-12 sm:pb-16">
         <div className="flex flex-col lg:flex-row items-center">
           {/* Left: Hero Text & CTA */}
-          <motion.div 
-            className="w-full lg:w-1/2 lg:max-w-xl mx-auto"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="w-full lg:w-1/2 lg:max-w-xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
-             Abnehmen? Planung und Einkaufen <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">sollten dir nicht im Weg stehen</span>
+             Abnehmen? Wir machen es <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">einfach für dich</span>
             </h1>
             <p className="text-gray-600 mt-4 mb-6 text-base max-w-xl leading-relaxed">
-              Wir wissen alle, dass Planung und Einkaufen das Schlimmste an gesunder Ernährung sind. Calcart nimmt dir diese Last ab und macht gesundes Essen einfach, praktisch und budgetfreundlich. Versprochen!
+              Planung und Einkaufen sind oft das Nervigste beim gesunden Essen. Calcart nimmt dir das ab und macht gesundes Essen einfach und günstig. Einmal pro Woche planen wir dein Essen ganz nach deinen Zielen. So sparst du Zeit und nimmst leichter ab!
             </p>
             
             {/* CTA Form with improved mobile responsiveness */}
-            <motion.form 
+            <form 
               onSubmit={handleSubmit} 
               className="flex flex-col sm:flex-row gap-3 mb-2 w-full max-w-lg"
             >
-              <motion.div 
-                className="flex-1 relative"
-                whileFocus={{ scale: 1.02 }}
-              >
+              <div className="flex-1 relative">
                 <input
                   type="email"
                   value={email}
@@ -504,12 +496,10 @@ const SignUpPage = () => {
                   disabled={isSubmitting}
                 />
                 <div className="absolute inset-0 -z-10 bg-gradient-to-r from-calcart-green/20 to-emerald-300/20 rounded-md blur-md opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
-              </motion.div>
-              <motion.button
+              </div>
+              <button
                 type="submit"
                 className="w-full sm:w-auto bg-gradient-to-r from-calcart-green to-emerald-500 text-white px-5 py-3 sm:py-2 text-sm rounded-md font-medium shadow-md hover:shadow-lg transition-all whitespace-nowrap flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
@@ -522,70 +512,51 @@ const SignUpPage = () => {
                   </span>
                 ) : (
                   <>
-                    Frühzeitig anmelden
+                    Melde dich an
                     <ArrowIcon />
                   </>
                 )}
-              </motion.button>
-            </motion.form>
+              </button>
+            </form>
             
             {/* Privacy consent */}
             <p className="text-gray-500 text-xs mb-5 max-w-lg">
-              Mit deiner Anmeldung stimmst du unseren <a href="#" className="text-calcart-green underline">Datenschutzbestimmungen</a> und <a href="#" className="text-calcart-green underline">Nutzungsbedingungen</a> zu. Wir versenden nur relevante Infos und du kannst dich jederzeit abmelden.
+              Mit deiner Anmeldung stimmst du unseren <a href="#" className="text-calcart-green underline">Datenschutzregeln</a> und <a href="#" className="text-calcart-green underline">Nutzungsbedingungen</a> zu. Du bekommst nur wichtige Infos und kannst dich jederzeit abmelden.
             </p>
 
             {/* USP Banner - Moved below email input */}
-            <motion.div 
-              className="bg-gradient-to-r from-calcart-green/10 to-emerald-500/10 rounded-md p-3 mb-6 border-l-4 border-calcart-green"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
-            >
+            <div className="bg-gradient-to-r from-calcart-green/10 to-emerald-500/10 rounded-md p-3 mb-6 border-l-4 border-calcart-green">
               <div className="flex items-start gap-3">
                 <div className="text-xl mt-0.5">🚚</div>
                 <div>
                   <h3 className="text-gray-900 text-sm font-medium mb-1">Direkt vom Supermarkt bestellen</h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">Alle Rezepte kannst du über deine bevorzugten Supermärkte in der Nähe bestellen. Keine Lust zu kochen? Bestell dir einfach fertige Mahlzeiten von lokalen Restaurants mit einem Klick.</p>
+                  <p className="text-gray-600 text-xs leading-relaxed">Alle Rezepte kannst du direkt bestellen. Keine Lust zu kochen? Bestell dir einfach fertige Mahlzeiten mit einem Klick.</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
             
             {/* Store badges with improved design */}
-            <motion.div 
-              className="mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
-            >
+            <div className="mb-6">
               <p className="text-gray-500 text-xs mb-2">Bald verfügbar für:</p>
               <div className="flex gap-3">
-                <motion.a 
+                <a 
                   href="#" 
                   className="flex items-center bg-black text-white text-xs px-3 py-1.5 rounded-md shadow-sm hover:shadow-md transition-all"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <AppleIcon /> App Store
-                </motion.a>
-                <motion.a 
+                </a>
+                <a 
                   href="#" 
                   className="flex items-center bg-green-600 text-white text-xs px-3 py-1.5 rounded-md shadow-sm hover:shadow-md transition-all"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
                 >
                   <AndroidIcon /> Android
-                </motion.a>
+                </a>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
           
           {/* Right: Phone Mockup */}
-          <motion.div 
-            className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div className="w-full lg:w-1/2 flex justify-center mt-12 lg:mt-0">
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-r from-green-100 to-emerald-50 rounded-2xl backdrop-blur-lg shadow-lg"></div>
               <img
@@ -594,7 +565,7 @@ const SignUpPage = () => {
                 className="relative z-10 w-auto h-[450px] max-h-[80vh] object-contain"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -609,10 +580,10 @@ const SignUpPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2 tracking-tight">
-              Bald verfügbar in diesen Städten
+              Bald in diesen Städten
             </h2>
             <p className="text-gray-600 text-sm max-w-2xl mx-auto">
-              Werde Teil der Calcart-Gemeinschaft. Melde dich jetzt an, um als Erste*r über unseren Start in deiner Stadt informiert zu werden.
+              Werde Teil von Calcart. Melde dich an und erfahre als Erstes, wenn wir in deiner Stadt starten.
             </p>
           </motion.div>
 
@@ -669,7 +640,7 @@ const SignUpPage = () => {
                 className="text-xs text-calcart-green font-medium"
                 whileHover={{ x: 2 }}
               >
-                Stadt vorschlagen
+               
               </motion.a>
             </motion.div>
           </motion.div>
@@ -687,10 +658,10 @@ const SignUpPage = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Leistungsstarke</span> Funktionen
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Coole</span> Funktionen
             </h2>
             <p className="text-gray-600 text-base max-w-2xl mx-auto">
-              Entdecke, wie Calcart deine Beziehung zu Lebensmitteln und Ernährung mit diesen innovativen Funktionen verbessert.
+              Entdecke, wie Calcart dir hilft, besser zu essen und einzukaufen.
             </p>
           </motion.div>
           
@@ -808,16 +779,16 @@ const SignUpPage = () => {
                 
                 <div className="text-center md:text-left">
                   <p className="text-gray-700 text-base md:text-lg font-medium mb-4 leading-relaxed">
-                    Wir sind ein kleines Team mit einer großen Mission: Dir deinen persönlichen Ernährungsberater zu geben - weil wir wissen, wie schwer es sein kann.
+                    Wir lieben gutes Essen und machen es für dich leichter, gesund zu leben. Mit Calcart wird deine Ernährung zum Kinderspiel!
                   </p>
                   
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    In einer Welt voller Diättrends und widersprüchlicher Ernährungsratschläge wollen wir dir Klarheit und Personalisierung bieten. Mit Calcart hast du eine maßgeschneiderte Ernährungsberatung – direkt in deiner Tasche, rund um die Uhr. Wir nutzen Technologie nicht nur, um Infos zu liefern, sondern um echte, alltagstaugliche Lösungen zu schaffen, die zu deinem Leben passen.
+                    Es gibt so viele Diäten und widersprüchliche Tipps zum Essen. Wir wollen Klarheit bringen. Mit Calcart hast du einen persönlichen Ernährungsberater direkt auf deinem Handy. Wir liefern dir nicht nur Infos, sondern echte Lösungen, die zu deinem Leben passen.
                   </p>
                   
                   <div className="bg-emerald-50 border-l-4 border-calcart-green p-4 rounded-r-md">
                     <p className="text-gray-800 text-sm font-medium italic">
-                      Es gibt jetzt keine Ausreden mehr. Gesunde Ernährung war noch nie so einfach, zugänglich und auf deine Bedürfnisse zugeschnitten. Wir helfen dir dabei!
+                      Keine Ausreden mehr! Gesund essen war noch nie so einfach. Wir helfen dir dabei.
                     </p>
                   </div>
                   
@@ -836,10 +807,10 @@ const SignUpPage = () => {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-gray-900">Alexander Brunner</h3>
-                        <p className="text-calcart-green font-medium text-sm mb-2">Gründer & CEO</p>
+                        <p className="text-calcart-green font-medium text-sm mb-2">Gründer & Chef</p>
                         <p className="text-gray-600 text-sm">
-                          Alex hat Calcart mit dem Ziel gegründet, die komplexe Welt der Ernährung für jeden zugänglich zu machen. 
-                          Mit einem Hintergrund in Technologie und einer Leidenschaft für gesunde Ernährung, leitet er die Vision von Calcart.
+                          Alex hat Calcart gegründet, damit gesundes Essen für jeden einfach wird. 
+                          Er kennt sich gut mit Technik aus und liebt gesundes Essen. Er leitet das Team und entwickelt die Ideen für Calcart.
                         </p>
                       </div>
                     </div>
@@ -860,7 +831,7 @@ const SignUpPage = () => {
                       className="text-sm text-gray-600 hover:text-calcart-green flex items-center gap-1"
                       whileHover={{ x: 3 }}
                     >
-                      <span>Karriere</span>
+                      <span>Jobs</span>
                       <ArrowIcon />
                     </motion.a>
                   </div>
