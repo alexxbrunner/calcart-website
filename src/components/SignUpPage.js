@@ -429,7 +429,7 @@ const SignUpPage = () => {
              Kein Bock mehr auf <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Diät-Stress?</span>
             </h1>
             <p className="text-gray-600 mt-4 mb-6 text-base max-w-xl leading-relaxed">
-              Nach einem langen Tag noch überlegen, was du essen sollst? Keine Zeit zum Einkaufen? Und dann noch auf Kalorien achten? Schluss damit. Calcart plant deine Mahlzeiten passend zu deinen Zielen und deinem Lifestyle. Zutaten vom Supermarkt direkt zu dir nach Hause liefern lassen oder – wenn's schnell gehen muss – fertige Mahlzeiten von Restaurants in deiner Nähe bestellen. Gesund essen war noch nie so unkompliziert.
+              Nach einem langen Tag noch überlegen, was du essen sollst? Schluss damit. Calcart plant deine Mahlzeiten passend zu deinen Zielen und deinem Lifestyle. Zutaten vom Supermarkt liefern lassen oder fertige Mahlzeiten bestellen – ganz wie's dir passt. Gesund essen, ohne nachzudenken.
             </p>
             
             {/* CTA Form with improved mobile responsiveness */}
