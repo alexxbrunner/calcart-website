@@ -426,10 +426,10 @@ const SignUpPage = () => {
           {/* Left: Hero Text & CTA */}
           <div className="w-full lg:w-1/2 lg:max-w-xl mx-auto">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
-             Abnehmen? Wir machen es <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">einfach für dich</span>
+             Kein Bock mehr auf <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Diät-Stress?</span>
             </h1>
             <p className="text-gray-600 mt-4 mb-6 text-base max-w-xl leading-relaxed">
-              Planung und Einkaufen sind oft das Nervigste beim gesunden Essen. Calcart nimmt dir das ab und macht gesundes Essen einfach und günstig. Einmal pro Woche planen wir dein Essen ganz nach deinen Zielen. So sparst du Zeit und nimmst leichter ab!
+              Nach einem langen Tag noch überlegen, was du essen sollst? Keine Zeit zum Einkaufen? Und dann noch auf Kalorien achten? Schluss damit. Calcart plant deine Mahlzeiten passend zu deinen Zielen und deinem Lifestyle. Zutaten vom Supermarkt direkt zu dir nach Hause liefern lassen oder – wenn's schnell gehen muss – fertige Mahlzeiten von Restaurants in deiner Nähe bestellen. Gesund essen war noch nie so unkompliziert.
             </p>
             
             {/* CTA Form with improved mobile responsiveness */}
@@ -488,8 +488,8 @@ const SignUpPage = () => {
               <div className="flex items-start gap-3">
                 <div className="text-xl mt-0.5">🚚</div>
                 <div>
-                  <h3 className="text-gray-900 text-sm font-medium mb-1">Direkt vom Supermarkt bestellen</h3>
-                  <p className="text-gray-600 text-xs leading-relaxed">Alle Rezepte kannst du direkt bestellen. Keine Lust zu kochen? Bestell dir einfach fertige Mahlzeiten mit einem Klick.</p>
+                  <h3 className="text-gray-900 text-sm font-medium mb-1">Essen, wie's in deinen Alltag passt</h3>
+                  <p className="text-gray-600 text-xs leading-relaxed">Zutaten liefern lassen und selbst kochen oder bei Zeitmangel fertige Gerichte bestellen – du entscheidest je nach Tagesplan. Kein Stress, keine Kompromisse.</p>
                 </div>
               </div>
             </div>
@@ -521,8 +521,10 @@ const SignUpPage = () => {
               <img
                 src={PHONE_MOCKUP}
                 alt="Calcart App"
-                className="relative z-10 w-auto h-[450px] max-h-[80vh] object-contain"
+                className="relative z-10 w-auto h-[600px] max-h-[90vh] object-contain transform hover:scale-105 transition-transform duration-500 shadow-xl rounded-xl"
               />
+              {/* Add glowing effect */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-calcart-green/20 to-emerald-400/20 rounded-2xl blur-xl opacity-70 -z-10 animate-pulse"></div>
             </div>
           </div>
         </div>
@@ -533,10 +535,10 @@ const SignUpPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-8">
             <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-2 tracking-tight">
-              Bald in diesen Städten
+              Wo wir bald durchstarten
             </h2>
             <p className="text-gray-600 text-sm max-w-2xl mx-auto">
-              Werde Teil von Calcart. Melde dich an und erfahre als Erstes, wenn wir in deiner Stadt starten.
+              Sei von Anfang an dabei. Meld dich an und erfahre als Erste(r), wenn wir in deiner Stadt loslegen.
             </p>
           </div>
 
@@ -580,10 +582,10 @@ const SignUpPage = () => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">Coole</span> Funktionen
+              Was <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">dich</span> erwartet
             </h2>
             <p className="text-gray-600 text-base max-w-2xl mx-auto">
-              Entdecke, wie Calcart dir hilft, besser zu essen und einzukaufen.
+              So macht Calcart dein Leben leichter - check diese Features aus.
             </p>
           </div>
           
@@ -602,11 +604,11 @@ const SignUpPage = () => {
                     <h3 className="text-base font-medium text-gray-900">{card.title}</h3>
                   </div>
                   <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {card.id === 1 ? "Bekomme Speisepläne, die zu dir passen. Wir planen nach deinen Vorlieben, Zielen und Budget. Einfach und passend zu dir!" : 
-                     card.id === 2 ? "Verfolge deine Fortschritte ganz einfach. Setze realistische Ziele und sieh deine Erfolge in bunten Diagrammen." :
-                     card.id === 3 ? "Spare Geld mit smarten Einkaufslisten. Kaufe Zutaten, die in dein Budget passen und trotzdem gesund und lecker sind." :
-                     card.id === 4 ? "Finde leckere Rezepte, die zu deinem Geschmack passen. Egal ob Anfänger oder Profi in der Küche - wir haben was für dich." :
-                     "Lass alle Zutaten direkt zu dir liefern. Keine Lust zu kochen? Bestell dir fertige Mahlzeiten mit nur einem Klick."}
+                    {card.id === 1 ? "Dein Geschmack, deine Regeln. Wir planen Speisen, die zu dir passen – egal ob Low Carb, vegan oder du einfach nur Bananen hasst. Auf dein Ziel und Budget abgestimmt." : 
+                     card.id === 2 ? "Schluss mit den ständigen Gewichtsschwankungen. Tracke deine Fortschritte ohne Stress und sieh in coolen Grafiken, wie du vorankommst." :
+                     card.id === 3 ? "Gutes Essen muss nicht teuer sein. Unsere smarten Listen zeigen dir, wo du sparen kannst, ohne bei der Qualität Abstriche zu machen." :
+                     card.id === 4 ? "Von schnellen 15-Minuten-Gerichten bis zum Sonntagsbraten – für jedes Level und jeden Geschmack ist was dabei. Auch wenn du nur eine Mikrowelle bedienen kannst." :
+                     "Keine Lust auf Einkaufsmarathon nach der Arbeit? Lass dir alles liefern oder bestell fertige Mahlzeiten mit einem Klick, wenn's mal schnell gehen muss."}
                   </p>
                 </div>
               </div>
@@ -627,7 +629,7 @@ const SignUpPage = () => {
                     <span className="text-xs font-medium bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">Q3 2025</span>
                   </div>
                   <p className="text-gray-600 text-sm mb-3">
-                    Ab dem dritten Quartal 2025 führen wir Sport-Communities ein. Verbinde dich mit Gleichgesinnten, nimm an Challenges teil und teile deine Erfolge. Trainiere gemeinsam, motiviert euch gegenseitig und erreicht eure Fitnessziele in einer unterstützenden Community. Du schaffst das!
+                    Coming soon: Sport-Communities! Connect mit Gleichgesinnten, nimm an Challenges teil und hol dir die Extra-Motivation. Gemeinsam durchziehen ist einfacher als allein – egal ob Laufgruppe oder Home-Workout nach Feierabend. Ein bisschen Social Pressure kann manchmal Wunder wirken.
                   </p>
                   <button
                     className="inline-flex items-center text-sm text-blue-600 font-medium hover:translate-x-1 transition-transform"
@@ -670,7 +672,7 @@ const SignUpPage = () => {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
-                Über <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">uns</span>
+                Wer <span className="text-transparent bg-clip-text bg-gradient-to-r from-calcart-green to-emerald-400">steckt dahinter?</span>
               </h2>
             </div>
 
@@ -684,16 +686,16 @@ const SignUpPage = () => {
                 
                 <div className="text-center md:text-left">
                   <p className="text-gray-700 text-base md:text-lg font-medium mb-4 leading-relaxed">
-                    Wir lieben gutes Essen und machen es für dich leichter, gesund zu leben. Mit Calcart wird deine Ernährung zum Kinderspiel!
+                    Wir sind auch genervt von kompliziertem Ernährungskram. Deshalb machen wir's einfach – mit Calcart wird gesundes Essen zum No-Brainer.
                   </p>
                   
                   <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                    Es gibt so viele Diäten und widersprüchliche Tipps zum Essen. Wir wollen Klarheit bringen. Mit Calcart hast du einen persönlichen Ernährungsberater direkt auf deinem Handy. Wir liefern dir nicht nur Infos, sondern echte Lösungen, die zu deinem Leben passen.
+                    Keto, Low Carb, Paleo, Vegan... wer soll da noch durchblicken? Wir bringen Ordnung in den Diät-Dschungel und liefern praktische Lösungen statt nur Theorie. Mit Calcart hast du quasi einen persönlichen Ernährungscoach in der Tasche, der zu deinem Leben passt – nicht umgekehrt.
                   </p>
                   
                   <div className="bg-emerald-50 border-l-4 border-calcart-green p-4 rounded-r-md">
                     <p className="text-gray-800 text-sm font-medium italic">
-                      Keine Ausreden mehr! Gesund essen war noch nie so einfach. Wir helfen dir dabei.
+                      Genug mit den Ausreden! Mit uns wird gesunde Ernährung so einfach, dass es keinen Grund mehr gibt, es nicht zu tun.
                     </p>
                   </div>
                   
