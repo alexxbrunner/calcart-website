@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackgroundMesh from './BackgroundMesh';
 import Header from './Header';
 import HeroSection from './HeroSection';
@@ -52,15 +53,41 @@ const SignUpPage = () => {
                 <CitiesTicker />
 
                 <ProcessSection />
-      
+
                 {/* 5. Bento Features */}
                 <BentoGrid />
                 <FAQSection />
             </main>
 
-            {/* Footer Simple */}
-            <footer className="py-12 text-center text-slate-400 text-sm">
-                <p>&copy; 2025 Calcart Inc. Made for better eating.</p>
+            {/* Footer */}
+            <footer className="py-12 px-6 bg-slate-50 border-t border-slate-100">
+                <div className="max-w-7xl mx-auto">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <p className="text-slate-400 text-sm">
+                            &copy; 2025 Calcart Inc. Made for better eating.
+                        </p>
+                        <div className="flex gap-6 text-sm">
+                            <Link 
+                                to="/impressum" 
+                                className="text-slate-500 hover:text-emerald-600 transition-colors"
+                            >
+                                Impressum
+                            </Link>
+                            <Link 
+                                to="/agb" 
+                                className="text-slate-500 hover:text-emerald-600 transition-colors"
+                            >
+                                AGB
+                            </Link>
+                            <Link 
+                                to="/datenschutz" 
+                                className="text-slate-500 hover:text-emerald-600 transition-colors"
+                            >
+                                Datenschutz
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </footer>
             
             {/* Custom Animations Styles */}
