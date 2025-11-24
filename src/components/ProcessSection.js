@@ -23,13 +23,13 @@ const ProcessSection = () => {
 
           {/* Step 1: The Trigger */}
           <div className="relative z-10 flex justify-center mb-16">
-            <div className="bg-white border border-slate-200 shadow-xl shadow-slate-200/40 rounded-2xl p-6 text-center max-w-xs transform hover:scale-105 transition-transform duration-300">
+            <div className="bg-white border border-slate-200 shadow-xl shadow-slate-200/40 rounded-2xl p-6 text-center max-w-md transform hover:scale-105 transition-transform duration-300">
               <div className="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 So.
               </div>
               <h3 className="font-bold text-slate-900 text-lg">Der Plan droppt</h3>
               <p className="text-slate-500 text-sm mt-2">
-                Deine KI analysiert deine Ziele und erstellt den Plan für die kommende Woche.
+                Deine KI analysiert dein <strong className="text-slate-700">Budget + deine Ziele</strong> und findet den optimalen Ernährungsplan für die Woche.
               </p>
             </div>
           </div>
@@ -40,8 +40,6 @@ const ProcessSection = () => {
             {/* Path A: Supermarket */}
             <div className="relative group">
               <div className="md:text-right">
-                <div className="absolute top-8 md:right-[-56px] right-auto left-1/2 md:left-auto -translate-x-1/2 md:translate-x-0 w-8 h-8 bg-white border-4 border-emerald-400 rounded-full z-20"></div>
-                
                 <div className="bg-gradient-to-br from-white to-emerald-50/50 border border-emerald-100 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex md:justify-end mb-4">
                     <div className="w-14 h-14 bg-emerald-100 rounded-2xl flex items-center justify-center text-2xl">🛒</div>
@@ -61,8 +59,6 @@ const ProcessSection = () => {
             {/* Path B: Delivery */}
             <div className="relative group">
               <div className="md:text-left">
-                <div className="absolute top-8 md:left-[-56px] left-1/2 -translate-x-1/2 w-8 h-8 bg-white border-4 border-cyan-400 rounded-full z-20"></div>
-                
                 <div className="bg-gradient-to-br from-white to-cyan-50/50 border border-cyan-100 p-8 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <div className="flex justify-start mb-4">
                     <div className="w-14 h-14 bg-cyan-100 rounded-2xl flex items-center justify-center text-2xl">🍱</div>

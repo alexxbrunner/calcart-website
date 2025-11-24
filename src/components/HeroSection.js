@@ -79,7 +79,7 @@ const HeroSection = ({ onSubmit, email, setEmail, isSubmitting }) => {
           </h1>
           
           <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0 text-balance font-medium">
-            Calcart ist dein persönlicher Ernährungs-Manager. Wir planen, tracken und kaufen für dich ein. 
+            Calcart analysiert dein <strong className="text-slate-900">Budget + deine Ziele</strong> und erstellt den perfekten Wochenplan. Wir tracken, planen und kaufen für dich ein. 
             <span className="hidden sm:inline"> Schluss mit Decision Fatigue im Supermarkt.</span>
           </p>
 
